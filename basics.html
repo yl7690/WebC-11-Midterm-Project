@@ -4,13 +4,189 @@
     <meta charset="utf-8">
     <title>The Game of Go</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <div id="mainContainer">
-      basics
-      <div id="headBar">
-        <div id="pageTitle">THE GAME OF GO</div>
+  <body class="basicsPage">
+    <div class="mainContainer">
+      <div class="content">
+        <div class="cover">
+          <h1>Basics</h1>
+        </div>
+        <div class="part1">
+          <div class="title">
+            Equipments
+          </div>
+          <div class="stonesIntro">
+            <div class="prompt">
+              <div class="stones">
+                <img src="img/stoneGroup.png">
+              </div>
+              <div class="bubbles">
+                <div class="triContainer"><img src="img/whiteTriangle.png" class="whiteTriangle"></div>
+                <div class="text">
+                  We are stones. We are enemies against each other on our battleground. The black army in Go usually contains 181 stones and the white army contains 180 white ones; a 19×19 grid has 361 points, so there are enough stones to cover the board, and Black gets the extra odd stone because that the black side goes first. However, it may happen, that many back-and-forth captures empty the army before the end of the game: in that case, an exchange of prisoners allows the game to continue.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="boardIntro">
+            <div class="prompt">
+              <div class="clearText">
+                Here is our battleground.
+              </div>
+              <div class="clearText">
+                It is called the board.
+              </div>
+              <div class="clearText">
+                Hover to check out the position names on the board.
+              </div>
+            </div>
+            <div class="boardNavi">
+              <div class="narrator">
+                <div class="stones">
+                  <img src="img/blackStone.png">
+                </div>
+                <div class="bubbles">
+                  <div class="triContainer"><img src="img/whiteTriangle.png" class="whiteTriangle"></div>
+                  <div class="text">
+                    This is called <div class="placeholder">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="A">Star point.</div>
+                    <div class="B">Origin of Heaven.</div>
+                    <div class="C">Five by Five.</div>
+                    <div class="D">Three by Three.</div>
+                    <div class="E">Small Point.</div>
+                    <div class="F">High Point.</div>
+                    <div class="G">Large High Point.</div>
+                    <div class="H">Outside Point.</div>
+                    <div class="I">Outside the Large Point.</div>
+                    <div class="J">Star point.</div>
+                  </div>
+                </div>
+              </div>
+              <img src="img/go-board.png" alt="a picture of the board" class="boardPic">
+              <div class="hoverEffect">
+                <div class="positionA">
+                </div>
+                <div class="positionB">
+                </div>
+                <div class="positionC">
+                </div>
+                <div class="positionD">
+                </div>
+                <div class="positionE">
+                </div>
+                <div class="positionF">
+                </div>
+                <div class="positionG">
+                </div>
+                <div class="positionH">
+                </div>
+                <div class="positionI">
+                </div>
+                <div class="positionJ">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="part2">
+          <div class="title">
+            Rules
+          </div>
+          <div class="prompt">
+            <div class="stones">
+              <img src="img/whiteStone.png">
+            </div>
+            <div class="bubbles">
+              <div class="triContainer"><img src="img/whiteTriangle.png" class="whiteTriangle"></div>
+              <div class="text">
+                A game of Go starts with an empty board.Each player has an effectively unlimited stones, one taking the black stones, the other taking white.
+              </div>
+            </div>
+          </div>
+          <div class="prompt">
+            <div class="bubbles">
+              <div class="text">
+                The main object of the game is to use your stones to form territories by surrounding vacant areas of the board. It is also possible to capture your opponent's stones by completely surrounding them.              </div>
+              <div class="triContainer"><img src="img/blackTriangle.png" class="blackTriangle"></div>
+            </div>
+            <div class="stones">
+              <img src="img/blackStone.png">
+            </div>
+          </div>
+          <div class="prompt">
+            <div class="stones">
+              <img src="img/whiteStone.png">
+            </div>
+            <div class="bubbles">
+              <div class="triContainer"><img src="img/whiteTriangle.png" class="whiteTriangle"></div>
+              <div class="text">
+                Players take turns, placing one of their stones on a vacant point at each turn, with Black playing first. Note that stones are placed on the intersections of the lines rather than in the squares and once played stones are not moved.               </div>
+            </div>
+          </div>
+          <div class="prompt">
+            <div class="bubbles">
+              <div class="text">
+                If the stones are being captured, they are removed from the board, and kept by the capturing player as prisoners.
+              </div>
+              <div class="triContainer"><img src="img/blackTriangle.png" class="blackTriangle"></div>
+            </div>
+            <div class="stones">
+              <img src="img/blackStone.png">
+            </div>
+          </div>
+        </div>
+        <div class="part3">
+          <div class="title">
+            strategy
+          </div>
+          <div class="gallery">
+          <!-- code from https://stackblitz.com/edit/medium-tabs?file=index.html -->
+            <input type="radio" name="tabs" id="tab1" checked />
+            <label for="tab1">Connection</label>
+
+            <input type="radio" name="tabs" id="tab2" />
+            <label for="tab2">Cut</label>
+
+            <input type="radio" name="tabs" id="tab3" />
+            <label for="tab3">Stay alive</label>
+
+            <input type="radio" name="tabs" id="tab4" />
+            <label for="tab4">Death</label>
+
+            <input type="radio" name="tabs" id="tab5" />
+            <label for="tab5">Invasion</label>
+
+            <input type="radio" name="tabs" id="tab6" />
+            <label for="tab6">Reduction</label>
+
+            <input type="radio" name="tabs" id="tab7" />
+            <label for="tab7">Sente</label>
+
+            <input type="radio" name="tabs" id="tab8" />
+            <label for="tab8">Sacrifice</label>
+
+            <div class="tab content1">Keeping one's own stones connected means that fewer groups need to make living shape, and one has fewer groups to defend.</div>
+            <div class="tab content2">Keeping opposing stones disconnected means that the opponent needs to defend and make living shape for more groups.</div>
+            <div class="tab content3">The simplest way to stay alive is to establish a foothold in the corner or along one of the sides. At a minimum, a group must have two eyes (separate open points) to be alive.[68] An opponent cannot fill in either eye, as any such move is suicidal and prohibited in the rules.</div>
+            <div class="tab content4">A group that lacks living shape is eventually removed from the board as captured.</div>
+            <div class="tab content5">Set up a new living group inside an area where the opponent has greater influence, means one reduces the opponent's score in proportion to the area one occupies.</div>
+            <div class="tab content6">Placing a stone far enough into the opponent's area of influence to reduce the amount of territory they eventually get, but not so far in that it can be cut off from friendly stones outside.</div>
+            <div class="tab content7">A play that forces one's opponent to respond (gote). A player who can regularly play sente has the initiative and can control the flow of the game.</div>
+            <div class="tab content8">Allowing a group to die in order to carry out a play, or plan, in a more important area.</div>
+
+
+          </div>
+        </div>
+        <div class="part4">
+          <div class="nextPage">
+            <a href="history.html"><p>Explre the History</p></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="headBar">
+        <div class="pageTitle">THE GAME OF GO</div>
         <div class="navigation">
           <div class="pageNames"><a href="index.html">Home</a></div>
           <div class="pageNames"><a href="intro.html">Introduction</a></div>
