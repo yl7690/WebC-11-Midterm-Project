@@ -7,6 +7,9 @@ var menuClosed = true;
 var A, B, C, D, E, F, G, H, I, J;
 var nameA, nameB, nameC, nameD, nameE, nameF, nameG, nameH, nameI, nameJ;
 var blank;
+var largeStones, largeStone2, largeStone3, largeStone4;
+var jumpingStones;
+var i;
 
 window.addEventListener('DOMContentLoaded', (event) => {
 
@@ -23,6 +26,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // menuButtonElem.addEventListener('click', openMenu);
     yinElem.addEventListener('click', openMenu);
     yangElem.addEventListener('click', openMenu);
+});
+
+window.addEventListener('DOMContentLoaded', (event) => {
+
+  console.log("loaded...");
+
+  largeStone1 = document.getElementsByClassName('stones')[0];
+  jumpingStones = document.getElementsByClassName('bouncing');
+
+  // menuButtonElem.addEventListener('click', openMenu);
+  largeStone1.addEventListener('mouseenter', stopBouncing);
+  largeStone1.addEventListener('mouseleave', startBouncing);
 });
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -87,6 +102,18 @@ function openMenu() {
   }
 }
 
+function stopBouncing() {
+  console.log('working')
+  for (i=0; i<jumpingStones.length; i++) {
+    jumpingStones[i].classList.add('stopB');
+  }
+}
+
+function startBouncing() {
+  for (i=0; i<jumpingStones.length; i++) {
+    jumpingStones[i].classList.remove('stopB');
+  }
+}
 
 function showNameA() {
   console.log("show");
