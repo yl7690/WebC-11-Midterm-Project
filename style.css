@@ -763,13 +763,9 @@ html, body {
 
 
 /* start of basics page */
-.basicsPage .headBar {
-  background-color: #54bbff;
-}
 
-.basicsPage .content {
-  padding-top: 66px;
-  background-image: linear-gradient(to bottom, rgba(84, 187, 255, 1), rgba(84, 187, 255, 0.5));
+.basicsPage .mainContainer {
+  background-color: #9fc7c9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -777,7 +773,7 @@ html, body {
 
 .basicsPage .cover {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   background-image: url(img/basicsCover.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -800,7 +796,7 @@ html, body {
   flex-direction: column;
 }
 
-.basicsPage .title {
+.basicsPage h2 {
   font-family: Lexend;
   font-size: 40px;
   font-weight: 700;
@@ -810,71 +806,25 @@ html, body {
   padding-left: 2vw;
   position: relative;
   margin-bottom: 6vw;
+  margin-top: 0px;
 }
 
-.basicsPage .title:after {
+.basicsPage h2:after {
     content: "";
     display: block;
-    width: 4vw;
-    height: 4vw;
-    border-bottom: 0.5vw solid #fcfffb;
-    border-left: 0.5vw solid #fcfffb;
+    width: 120px;
+    height: 72px;
+    background: url(img/Untitled-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
-    left: 0px;
-    bottom: 0px;
+    left: -15px;
+    bottom: -10px;
 }
 
-.basicsPage .prompt {
-  display: flex;
-  flex-direction: row;
-}
-
-.basicsPage .part1 .stones {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.basicsPage .part1 .stones img {
-  width: 80%;
-  object-fit: contain;
-}
-
-.basicsPage .part1 .bubbles {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 60%;
-}
-
-.basicsPage .text {
-  background-color: #fcfffb;
-  padding: 30px;
-  border-radius: 20px;
-  font-size: 22px;
-  color: #393937;
-}
-
-.basicsPage .triContainer {
-  width: 50px;
-  height: 40px;
-  margin-top: 20px;
-}
-
-.basicsPage .blackTriangle {
-  width: 50px;
-  height: 40px;
-  transform: rotate(180deg);
-}
-
-.basicsPage .whiteTriangle {
-  width: 50px;
-  height: 40px;
-}
-
-.basicsPage .part1 .boardIntro .prompt {
+.basicsPage .part1 .prompt {
   padding: 6vw;
+  padding-top: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -883,6 +833,10 @@ html, body {
   font-family: Lexend;
   font-size: 24px;
   color: #fcfffb;
+}
+
+.basicsPage .part1 .clearText span {
+  font-weight: 700;
 }
 
 .basicsPage .clearText+.clearText {
@@ -897,18 +851,43 @@ html, body {
   display: flex;
   flex-direction: row;
   position: relative;
+  margin-bottom: 10vw;
 }
 
-.basicsPage .narrator {
+.basicsPage .boardIntro .narrator {
   display: flex;
   flex-direction: row;
-  padding: 3vw;
-  width: 100%;
-  position: relative;
+  padding-right: 3vw;
+  padding-top: 3vw;
+  width: 70%;
 }
 
-.basicsPage .narrator .stones {
+.basicsPage .boardIntro .narrator .bubbles {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 60%;
+}
+
+.basicsPage .boardIntro .narrator .text {
+  font-family: Lexend;
+  background-color: #fcfffb;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 22px;
+  color: #393937;
+}
+
+.basicsPage .boardIntro .narrator .stones {
   width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.basicsPage .boardIntro .narrator .stones img {
+  width: 80%;
+  object-fit: contain;
 }
 
 .basicsPage .boardPic {
@@ -919,118 +898,114 @@ html, body {
   display: none;
 }
 
-.placeholder {
+.placeholder span:first-child {
   text-decoration: underline;
+}
+
+.basicsPage .hoverEffect *:hover {
+  border: 3px solid #9fc7c9;
+  transform: scale(1.3, 1.3);
+  z-index: +99;
 }
 
 .positionA {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #393937;
   border-radius: 50%;
   position: absolute;
-  right: 6.5%;
-  top: 47.5%;
-  z-index: +1;
+  right: 6.55%;
+  top: 47.4%;
 }
 
 .positionB {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #fcfffb;
   border-radius: 50%;
   position: absolute;
-  right: 19%;
-  top: 47.5%;
-  z-index: +1;
+  right: 19.05%;
+  top: 47.4%;
 }
 
 .positionC {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #fcfffb;
   border-radius: 50%;
   position: absolute;
   right: 8.6%;
-  bottom: 22%;
-  z-index: +1;
+  bottom: 21.5%;
 }
 
 .positionD {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #393937;
   border-radius: 50%;
   position: absolute;
-  right: 4.4%;
-  bottom: 11.5%;
-  z-index: +1;
+  right: 4.45%;
+  bottom: 11.2%;
 }
 
 .positionE {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #fcfffb;
   border-radius: 50%;
   position: absolute;
-  right: 4.4%;
+  right: 4.45%;
   bottom: 16.4%;
-  z-index: +1;
 }
 
 .positionF {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #393937;
   border-radius: 50%;
   position: absolute;
-  right: 6.5%;
-  bottom: 22%;
-  z-index: +1;
+  right: 6.53%;
+  bottom: 21.5%;
 }
 
 .positionG {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #fcfffb;
   border-radius: 50%;
   position: absolute;
-  right: 6.5%;
-  bottom: 26.8%;
-  z-index: +1;
+  right: 6.53%;
+  bottom: 26.73%;
 }
 
 .positionH {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #393937;
   border-radius: 50%;
   position: absolute;
-  right: 4.4%;
-  bottom: 22%;
-  z-index: +1;
+  right: 4.45%;
+  bottom: 21.5%;
 }
 
 .positionI {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #393937;
   border-radius: 50%;
   position: absolute;
-  right: 4.4%;
-  bottom: 26.8%;
-  z-index: +1;
+  right: 4.45%;
+  bottom: 26.73%;
 }
 
 .positionJ {
   width: 1.3vw;
   height: 1.3vw;
-  background-color: #fff;
+  background-color: #fcfffb;
   border-radius: 50%;
   position: absolute;
-  right: 6.5%;
+  right: 6.54%;
   bottom: 16.4%;
-  z-index: +1;
 }
 
 .showName {
@@ -1041,23 +1016,134 @@ html, body {
   display: none;
 }
 
+.basicsPage .triContainer {
+  width: 50px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.basicsPage .whiteTriangle {
+  width: 50px;
+  height: 40px;
+}
+
+.basicsPage .stonesIntro .armiesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.basicsPage .stonesIntro .narrator {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.basicsPage .stonesIntro .stones {
+  width: 18%;
+}
+
+.basicsPage .stonesIntro .stones img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.basicsPage .stonesIntro .bubbles {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-left: 1vw;
+}
+
+.basicsPage .stonesIntro .triContainer {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.basicsPage .stonesIntro .text {
+  font-weight: 500;
+  font-family: Lexend;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: #393937;
+  color: #fcfffb;
+}
+
+.basicsPage .stonesIntro .blackTriangle {
+  width: 50px;
+  height: 40px;
+}
+
+.basicsPage .stoneArmies {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.basicsPage .stoneArmies .blackArmy {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  padding-left: 0px;
+}
+
+.basicsPage .stoneArmies .whiteArmy {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  padding-right: 0px;
+}
+
+.basicsPage .stoneArmies .clearText {
+  align-self: center;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+.basicsPage .stonesIntro .brackets {
+  width: 100%;
+  height: 20px;
+  margin-top: 10px;
+  border: 5px solid #fcfffb;
+  border-top: 0px;
+}
+
 .basicsPage .part2 {
   width: 70%;
   display: flex;
   flex-direction: column;
 }
 
+.basicsPage .part2 .prompt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  line-height: 2em;
+}
+
+.basicsPage .part2 .blackTriangle {
+  width: 50px;
+  height: 40px;
+  transform: scaleX(-1);
+}
+
 .basicsPage .part2 .stones {
-  width: 40%;
+  width: 18%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .basicsPage .part2 .stones img {
-  width: 50%;
+  width: 100%;
   object-fit: contain;
-  transform: scaleX(-1);
 }
 
 .basicsPage .prompt .bubbles {
@@ -1070,9 +1156,22 @@ html, body {
   color: #393937;
 }
 
+.basicsPage .part2 .prompt .text {
+  font-weight: 500;
+  font-family: Lexend;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 22px;
+}
+
 .basicsPage .part2 .prompt:nth-child(odd) .text {
   color: #fcfffb;
   background-color: #393937;
+}
+
+.basicsPage .part2 .prompt:nth-child(even) .text {
+  color: #393937;
+  background-color: #fcfffb;
 }
 
 .basicsPage .part2 .prompt+.prompt {
@@ -1084,6 +1183,9 @@ html, body {
   display: flex;
   flex-direction: column;
   padding-bottom: 10vw;
+  font-family: Lexend;
+  font-weight: 60;
+  font-size: 20px;
 }
 
 /* code for https://stackblitz.com/edit/medium-tabs?file=index.html */
@@ -1105,9 +1207,10 @@ input ~ .tab { display: none }
 
 /* to style the tab */
 input + label {
-  border: 3px solid #fcfffb;
-  background: #54bbff;
-  padding: 4px 12px;
+  /* border: 3px solid #fcfffb; */
+  background: #fcfffb;
+  padding: 12px;
+  padding-bottom: 0px;
   border-radius: 16px 16px 0 0;
   position: relative;
   top: 1px;
@@ -1115,8 +1218,9 @@ input + label {
 
 /* to style the chosen tab */
 input:checked + label {
-  background: #fec675;
-  border-bottom: 3px solid #fcfffb;
+  background: #393937;
+  border-bottom: 3px solid #393937;
+  color: #fcfffb;
 }
 
 /* to style the content */
@@ -1124,12 +1228,7 @@ input ~ .tab {
   padding: 30px;
   background-color: #fcfffb;
   border-radius: 0 16px 16px 16px;
-}
-
-.basicsPage .part4 {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 4vw;
+  border: 5px solid #f7ba4d;
 }
 /* the end of basics page */
 
