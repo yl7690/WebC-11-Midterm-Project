@@ -82,6 +82,7 @@ html, body {
 .navigation a:hover {
   animation-name: grow;
   animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 .navigation a:nth-child(odd) {
@@ -587,9 +588,28 @@ html, body {
   background-color: #f7ba4d;
 }
 
+.introPage .navigation a:nth-child(2) {
+  background-image: url(headerImg/blackMiddle.png);
+}
+
+.introPage .navigation a:nth-child(3) {
+  background-image: url(headerImg/whiteLeft.png);
+}
+
+.introPage .navigation a:nth-child(4) {
+  background-image: url(headerImg/blackLeft.png);
+}
+
+.introPage .navigation a:nth-child(odd):hover {
+  background-image: url(indexImg/white.png);
+}
+
+.introPage .navigation a:nth-child(even):hover {
+  background-image: url(indexImg/black.png);
+}
+
 .introPage .part1 {
   width: 100%;
-  display: flex;
   flex-direction: row;
   position: relative;
   display: flex;
@@ -666,7 +686,7 @@ html, body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  align-items: flex-start;
+  align-items: stretch;
   font-family: 'Lexend';
   font-weight: 500;
   position: relative;
@@ -677,7 +697,7 @@ html, body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  align-items: flex-start;
+  align-items: stretch;
   font-family: 'Lexend';
   font-weight: 500;
   position: relative;
@@ -690,9 +710,9 @@ html, body {
   justify-content: space-evenly;
   align-items: flex-start;
   width: 50%;
-  height: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .introPage .answerSection {
@@ -769,6 +789,22 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.basicsPage .navigation a:nth-child(3) {
+  background-image: url(indexImg/random1.png);
+}
+
+.basicsPage .navigation a:nth-child(4) {
+  background-image: url(headerImg/blackLeft.png);
+}
+
+.basicsPage .navigation a:nth-child(3):hover {
+  background-image: url(indexImg/white.png);
+}
+
+.basicsPage .navigation a:nth-child(4):hover {
+  background-image: url(indexImg/black.png);
 }
 
 .basicsPage .cover {
@@ -1238,6 +1274,14 @@ input ~ .tab {
   background-color: #f7ba4d;
 }
 
+.historyPage .navigation a:nth-child(4) {
+  background-image: url(headerImg/blackMiddle.png);
+}
+
+.historyPage .navigation a:nth-child(4):hover {
+  background-image: url(indexImg/black.png);
+}
+
 .historyPage .cover {
   width: 100%;
   height: 80vh;
@@ -1294,7 +1338,9 @@ input ~ .tab {
 }
 
 .historyPage .events:hover {
-  animation: hisGrowing 2s infinite;
+  animation-name: hisGrowing;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 .historyPage #originText {
@@ -1442,19 +1488,28 @@ input ~ .tab {
   align-items: center;
 }
 
+.sourcePage .navigation a:nth-child(5) {
+  background-image: url(indexImg/random1.png);
+}
+
+.sourcePage .navigation a:nth-child(5):hover {
+  background-image: url(indexImg/white.png);
+}
+
 .sourcePage .part1 {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .sourcePage .part2 {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   margin-bottom: 10vw;
+  align-items: baseline;
 }
 
 .sourcePage .text {
@@ -1484,8 +1539,8 @@ input ~ .tab {
 }
 
 .sourcePage .wall{
-  width: 50%;
-  height: 100%;
+  width: 48vw;
+  height: 48vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -1500,9 +1555,11 @@ input ~ .tab {
 
 .sourcePage .part1 .buttons {
   position: absolute;
-  left: 0px;
-  width: 50%;
-  height: 100vh;
+  left: 30px;
+  width: 48vw;
+  height: 48vw;
+  padding: 7px;
+  padding-right: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1516,24 +1573,41 @@ input ~ .tab {
   justify-content: center;
 }
 
-.sourcePage .part1 a {
-  width: 100%;
+.sourcePage a {
+  width: 50%;
   height: 100%;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Lexend;
-  font-size: 25px;
-  padding: 30px;
+  font-size: 1.7vw;
   text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
-.sourcePage .part1 a:nth-child(even) {
-  background-image: url(indexImg/random4.png);
+@keyframes sourceGrowing {
+  from {transform: scale(1, 1);}
+  to {transform: scale(1.2, 1.2);}
+}
+
+.sourcePage .part1 a:hover {
+  animation-name: sourceGrowing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.sourcePage .part2 a:hover {
+  animation-name: sourceGrowing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.sourcePage .button {
+  position: absolute;
+  width: 14vw;
+}
+
+.sourcePage .buttons img {
+  width: 100%;
 }
 
 .sourcePage .part1 a:nth-child(even):link {
@@ -1556,10 +1630,6 @@ input ~ .tab {
   color: #fcfffb;
 }
 
-.sourcePage .part1 a:nth-child(odd) {
-  background-image: url(headerImg/whiteRight.png);
-}
-
 .sourcePage .part1 a:nth-child(odd):link {
   text-decoration: none;
   color: #393937;
@@ -1580,39 +1650,17 @@ input ~ .tab {
   color: #393937;
 }
 
-.soucePage .part2 .wall {
-  right: 0px;
-}
-
-.sourcePage .part2 a {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Lexend;
-  font-size: 25px;
-  padding: 30px;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .sourcePage .part2 .buttons {
   position: absolute;
-  right: 0px;
-  width: 50%;
-  height: 100vh;
+  right: 30px;
+  width: 48vw;
+  padding: 7px;
+  height: 48vw;
+  padding-left: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.sourcePage .part2 .row:first-child a:first-child {
-  background-image: url(indexImg/LeftTop.png);
 }
 
 .sourcePage .part2 .row:first-child a:first-child:link {
@@ -1635,10 +1683,6 @@ input ~ .tab {
   color: #fcfffb;
 }
 
-.sourcePage .part2 .row:first-child a:nth-child(2) {
-  background-image: url(indexImg/RightTop.png);
-}
-
 .sourcePage .part2 .row:first-child a:nth-child(2):link {
   text-decoration: none;
   color: #393937;
@@ -1659,10 +1703,6 @@ input ~ .tab {
   color: #393937;
 }
 
-.sourcePage .part2 .row:nth-child(2) a:first-child {
-  background-image: url(indexImg/LeftBottom.png);
-}
-
 .sourcePage .part2 .row:nth-child(2) a:first-child:link {
   text-decoration: none;
   color: #393937;
@@ -1681,10 +1721,6 @@ input ~ .tab {
 .sourcePage .part2 .row:nth-child(2) a:first-child:hover {
   text-decoration: none;
   color: #393937;
-}
-
-.sourcePage .part2 .row:nth-child(2) a:nth-child(2) {
-  background-image: url(indexImg/RightBottom.png);
 }
 
 .sourcePage .part2 .row:nth-child(2) a:nth-child(2):link {
